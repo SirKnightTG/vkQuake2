@@ -5,7 +5,7 @@ branches:
   - master
 
 environment:
-  VK_VERSION: 1.1.121.0
+  VK_VERSION: 1.1.121.1
   VULKAN_SDK: c:\VulkanSDK\%VK_VERSION%
 
 skip_tags: true
@@ -22,7 +22,7 @@ platform:
 - x86
 
 install:
-- ps: curl -o VulkanSDK.exe https://vulkan.lunarg.com/sdk/download/$env:VK_VERSION/windows/VulkanSDK-$env:VK_VERSION-Installer.exe?Human=true
+- ps: curl -v -o VulkanSDK.exe https://vulkan.lunarg.com/sdk/download/$env:VK_VERSION/windows/VulkanSDK-$env:VK_VERSION-Installer.exe?Human=true
 
 before_build:
 - cmd: .\VulkanSDK.exe /S
